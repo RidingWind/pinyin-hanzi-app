@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#58cc02">
+<title>拼音乐园 · 拼音汉字学习</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐼</text></svg>">
+<link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+<div id="app">
+
+  <!-- 欢迎页 -->
+  <section id="welcome" class="hidden">
+    <div class="mascot">🐼</div>
+    <h1>拼音乐园</h1>
+    <div class="sub">学拼音 · 认汉字 · 听发音 · 写笔顺<br>闯关复习，像游戏一样好玩！</div>
+    <div class="feat">
+      <span>🔊 真人发声</span><span>✍️ 笔顺动画详解</span><span>🖼 字义动画演示</span>
+      <span>🧩 常用词语</span><span>💬 看图造句</span><span>🔁 艾宾浩斯复习</span>
+    </div>
+    <button class="btn wide" id="startBtn">🚀 开始学习</button>
+  </section>
+
+  <!-- 主界面 -->
+  <div id="main" class="hidden" style="display:flex;flex-direction:column;height:100%">
+    <header id="topbar">
+      <span id="logoMini">🐼</span>
+      <span class="pill streak"><span class="ico">🔥</span><span id="streakN">0</span></span>
+      <span class="pill"><span class="ico">⚡</span><span id="xpN">0</span></span>
+      <span class="pill hearts"><span class="ico">❤️</span><span id="heartsN">5</span></span>
+    </header>
+    <main id="screens">
+      <section id="scr-learn" class="screen hidden"></section>
+      <section id="scr-review" class="screen hidden"></section>
+      <section id="scr-pinyin" class="screen hidden"></section>
+      <section id="scr-dict" class="screen hidden"></section>
+      <section id="scr-me" class="screen hidden"></section>
+    </main>
+    <nav id="tabbar">
+      <button data-tab="learn" class="tbtn active"><span class="t-ico">🏫</span>学习</button>
+      <button data-tab="review" class="tbtn"><span class="t-ico">🔁</span>复习</button>
+      <button data-tab="pinyin" class="tbtn"><span class="t-ico">🔤</span>拼音</button>
+      <button data-tab="dict" class="tbtn"><span class="t-ico">📖</span>字典</button>
+      <button data-tab="me" class="tbtn"><span class="t-ico">🏆</span>我的</button>
+    </nav>
+  </div>
+
+  <!-- 课程练习弹层 -->
+  <div id="lesson" class="hidden">
+    <div class="lesson-top">
+      <button class="quit-x" id="quitBtn">✕</button>
+      <div class="progress-wrap" id="lessonProgress"><div class="progress-fill"></div></div>
+      <span class="lesson-hearts" id="lessonHearts">❤️ × 5</span>
+    </div>
+    <div style="padding:0 18px"><div class="muted" id="lessonTitle" style="font-size:12px;font-weight:700"></div></div>
+    <div class="q-area" id="qArea"></div>
+    <div class="feedback hidden" id="feedbackBar"></div>
+    <div class="lesson-done hidden" id="lessonDone"></div>
+  </div>
+
+  <div id="toastWrap"></div>
+</div>
+
+<script src="vendor/hanzi-writer.min.js?v=5"></script>
+<script src="hanzi-strokes.js?v=5"></script>
+<script src="data.js?v=5"></script>
+<script src="app.js?v=5"></script>
+</body>
+</html>
